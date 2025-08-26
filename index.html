@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEP HAMZA — Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Noto Sans', sans-serif; }
+    .shadow-smooth { box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gray-900 text-white grid place-items-center font-extrabold">DH</div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">DEP HAMZA</h1>
+          <p class="text-xs text-gray-500 -mt-1">متجر بسيط — HTML فقط</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="openCartBtn" class="relative rounded-2xl border px-4 py-2 text-sm hover:bg-gray-100">
+          🛒 <span class="ml-1">السلة</span>
+          <span id="cartCount" class="absolute -top-2 -left-2 bg-gray-900 text-white text-[10px] leading-4 px-1.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6">
+    <div class="space-y-4">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">مرحبا بك فـ <span class="text-gray-900">DEP HAMZA</span></h2>
+      <p class="text-gray-600">واجهة متجر خفيفة وسريعة. زِد المنتجات للسلة ثم أرسل الطلب من الفورم، كيوصلك كامل فالإيميل ديالك.</p>
+      <a href="#products" class="inline-block rounded-2xl bg-gray-900 text-white px-5 py-3 text-sm hover:opacity-90">تسوّق الآن</a>
+    </div>
+    <div class="rounded-3xl overflow-hidden shadow-smooth bg-white">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop" alt="store" class="w-full h-64 object-cover">
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex items-end justify-between mb-4">
+      <h3 class="text-2xl font-bold">المنتجات</h3>
+      <div class="text-sm text-gray-500">(نموذج — بدّل الأسماء والأثمنة والصور كما بغيت)</div>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Product Card Template -->
+      <div class="product card bg-white rounded-3xl overflow-hidden shadow-smooth" data-id="p1" data-name="حقيبة ظهر" data-price="149" data-img="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1400&auto=format&fit=crop">
+        <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1400&auto=format&fit=crop" alt="حقيبة ظهر">
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold">حقيبة ظهر</h4>
+            <span class="font-bold">149 درهم</span>
+          </div>
+          <p class="text-sm text-gray-600">حقيبة عملية وخفيفة للمدرسة أو السفر.</p>
+          <button class="addToCart w-full rounded-2xl bg-gray-900 text-white py-2 text-sm">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <div class="product card bg-white rounded-3xl overflow-hidden shadow-smooth" data-id="p2" data-name="سماعات لاسلكية" data-price="229" data-img="https://images.unsplash.com/photo-1518441902110-9d7f1e40e9a7?q=80&w=1400&auto=format&fit=crop">
+        <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1518441902110-9d7f1e40e9a7?q=80&w=1400&auto=format&fit=crop" alt="سماعات">
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold">سماعات لاسلكية</h4>
+            <span class="font-bold">229 درهم</span>
+          </div>
+          <p class="text-sm text-gray-600">صوت نقي مع بطارية تدوم طويلا.</p>
+          <button class="addToCart w-full rounded-2xl bg-gray-900 text-white py-2 text-sm">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <div class="product card bg-white rounded-3xl overflow-hidden shadow-smooth" data-id="p3" data-name="ساعة ذكية" data-price="399" data-img="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1400&auto=format&fit=crop">
+        <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1400&auto=format&fit=crop" alt="ساعة">
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold">ساعة ذكية</h4>
+            <span class="font-bold">399 درهم</span>
+          </div>
+          <p class="text-sm text-gray-600">تتبّع الصحة والإشعارات في معصمك.</p>
+          <button class="addToCart w-full rounded-2xl bg-gray-900 text-white py-2 text-sm">إضافة للسلة</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout / Order Form -->
+  <section id="checkout" class="max-w-6xl mx-auto px-4 pb-24">
+    <div class="bg-white rounded-3xl p-6 shadow-smooth">
+      <h3 class="text-2xl font-bold mb-4">تأكيد الطلب</h3>
+      <!-- Replace the action URL with your Formspree endpoint -->
+      <form id="orderForm" action="https://formspree.io/f/xkgvnpqy" method="POST" class="grid md:grid-cols-2 gap-4">
+        <div class="md:col-span-1 space-y-3">
+          <label class="block text-sm">الاسم الكامل
+            <input required name="customer_name" class="mt-1 w-full rounded-2xl border px-3 py-2" placeholder="الاسم والنسب">
+          </label>
+          <label class="block text-sm">رقم الهاتف (واتساب)
+            <input required name="phone" class="mt-1 w-full rounded-2xl border px-3 py-2" placeholder="06xxxxxxxx">
+          </label>
+          <label class="block text-sm">المدينة والعنوان
+            <input required name="address" class="mt-1 w-full rounded-2xl border px-3 py-2" placeholder="المدينة، الحي، الزنقة، الرقم">
+          </label>
+          <label class="block text-sm">ملاحظات
+            <textarea name="notes" class="mt-1 w-full rounded-2xl border px-3 py-2" rows="3" placeholder="أي تفاصيل إضافية"></textarea>
+          </label>
+        </div>
+
+        <div class="md:col-span-1 space-y-3">
+          <div class="rounded-2xl border p-4">
+            <h4 class="font-semibold mb-2">محتوى السلة</h4>
+            <ul id="orderSummary" class="text-sm text-gray-700 space-y-1"></ul>
+            <div class="flex items-center justify-between border-t pt-2 mt-2">
+              <span class="font-semibold">المجموع</span>
+              <span id="summaryTotal" class="font-extrabold">0 درهم</span>
+            </div>
+          </div>
+          <!-- Hidden fields sent to email -->
+          <textarea id="order_payload" name="order_payload" class="hidden"></textarea>
+          <input type="hidden" name="_subject" value="طلب جديد — DEP HAMZA">
+          <input type="hidden" name="store_name" value="DEP HAMZA">
+          <button class="w-full rounded-2xl bg-gray-900 text-white py-3 text-sm">إرسال الطلب</button>
+          <p class="text-xs text-gray-500">بالضغط على "إرسال الطلب"، كتوصلنا تفاصيل السلة والمعلومات ديالك على الإيميل.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/30" id="closeCartOverlay"></div>
+    <aside class="absolute right-0 top-0 h-full w-full sm:w-[420px] bg-white shadow-xl p-5 overflow-y-auto">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="text-xl font-bold">سلة التسوق</h4>
+        <button id="closeCartBtn" class="text-gray-500">✕</button>
+      </div>
+      <div id="cartItems" class="space-y-3"></div>
+      <div class="mt-4 border-t pt-3 flex items-center justify-between">
+        <span class="font-semibold">المجموع:</span>
+        <span id="cartTotal" class="font-extrabold">0 درهم</span>
+      </div>
+      <a href="#checkout" id="goCheckout" class="mt-4 block text-center rounded-2xl bg-gray-900 text-white py-3">إتمام الطلب</a>
+    </aside>
+  </div>
+
+  <footer class="border-t border-gray-200 py-8 text-center text-xs text-gray-500">
+    © <span id="year"></span> DEP HAMZA — نسخة تجريبية HTML فقط
+  </footer>
+
+  <script>
+    // Utilities
+    const fmt = (n) => `${n} درهم`;
+
+    // State
+    const cart = new Map(); // key: id, value: {id, name, price, qty, img}
+
+    // DOM refs
+    const cartCount = document.getElementById('cartCount');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const closeCartOverlay = document.getElementById('closeCartOverlay');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+
+    const orderSummary = document.getElementById('orderSummary');
+    const summaryTotal = document.getElementById('summaryTotal');
+    const orderForm = document.getElementById('orderForm');
+    const orderPayload = document.getElementById('order_payload');
+
+    // Init year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Add to cart buttons
+    document.querySelectorAll('.addToCart').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.currentTarget.closest('.product');
+        const item = {
+          id: card.dataset.id,
+          name: card.dataset.name,
+          price: Number(card.dataset.price),
+          img: card.dataset.img
+        };
+        const current = cart.get(item.id) || { ...item, qty: 0 };
+        current.qty += 1;
+        cart.set(item.id, current);
+        renderCart();
+      });
+    });
+
+    function renderCart() {
+      // Count
+      let count = 0, total = 0;
+      cart.forEach(v => { count += v.qty; total += v.qty * v.price; });
+      cartCount.textContent = count;
+      cartItems.innerHTML = '';
+      orderSummary.innerHTML = '';
+
+      cart.forEach(v => {
+        const row = document.createElement('div');
+        row.className = 'flex gap-3 items-center border rounded-2xl p-3';
+        row.innerHTML = `
+          <img src="${v.img}" class="w-16 h-16 rounded-xl object-cover" alt="${v.name}">
+          <div class="flex-1">
+            <div class="font-semibold">${v.name}</div>
+            <div class="text-sm text-gray-600">${fmt(v.price)} × ${v.qty}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="px-2 rounded-lg border" data-act="dec" data-id="${v.id}">-</button>
+            <span class="min-w-[2ch] text-center">${v.qty}</span>
+            <button class="px-2 rounded-lg border" data-act="inc" data-id="${v.id}">+</button>
+            <button class="px-2 rounded-lg border text-red-600" data-act="del" data-id="${v.id}">حذف</button>
+          </div>`;
+        cartItems.appendChild(row);
+
+        // also to summary
+        const li = document.createElement('li');
+        li.textContent = `${v.name} — ${v.qty} × ${v.price} = ${v.qty * v.price} درهم`;
+        orderSummary.appendChild(li);
+      });
+
+      cartTotal.textContent = fmt(total);
+      summaryTotal.textContent = fmt(total);
+
+      // Controls
+      cartItems.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.dataset.id;
+          const it = cart.get(id);
+          if (!it) return;
+          if (b.dataset.act === 'inc') it.qty += 1;
+          if (b.dataset.act === 'dec') it.qty = Math.max(1, it.qty - 1);
+          if (b.dataset.act === 'del') cart.delete(id);
+          renderCart();
+        });
+      });
+    }
+
+    // Drawer open/close
+    openCartBtn.addEventListener('click', () => cartDrawer.classList.remove('hidden'));
+    closeCartBtn.addEventListener('click', () => cartDrawer.classList.add('hidden'));
+    closeCartOverlay.addEventListener('click', () => cartDrawer.classList.add('hidden'));
+
+    // Prepare payload before submit
+    orderForm.addEventListener('submit', (e) => {
+      if (cart.size === 0) {
+        e.preventDefault();
+        alert('السلة فارغة. زِد على الأقل منتَج واحد.');
+        return;
+      }
+      const items = [];
+      let total = 0;
+      cart.forEach(v => {
+        items.push({ id: v.id, name: v.name, price: v.price, qty: v.qty, line_total: v.qty * v.price });
+        total += v.qty * v.price;
+      });
+
+      const formData = new FormData(orderForm);
+      const payload = {
+        store: 'DEP HAMZA',
+        customer_name: formData.get('customer_name'),
+        phone: formData.get('phone'),
+        address: formData.get('address'),
+        notes: formData.get('notes'),
+        items,
+        total
+      };
+      orderPayload.value = JSON.stringify(payload, null, 2);
+    });
+  </script>
+</body>
+</html>
